@@ -1,0 +1,151 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+table.hovertable {
+	font-family: verdana, arial, sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+table.hovertable th {
+	background-color:#c3dde0;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+table.hovertable tr {
+	background-color:#d4e3e5;
+}
+table.hovertable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+/* button 
+---------------------------------------------- */
+.button {
+	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+ *display: inline;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: 50px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 1px;
+}
+.bigrounded {
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+}
+.medium {
+	font-size: 12px;
+	padding: .4em 1.5em .42em;
+}
+.small {
+	font-size: 11px;
+	padding: .2em 1em .275em;
+}
+/* orange */
+.orange {
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
+	background: -moz-linear-gradient(top, #faa51a, #f47a20);
+ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+.orange:hover {
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top, #f88e11, #f06015);
+ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.orange:active {
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top, #f47a20, #faa51a);
+ filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}
+</style>
+
+<!-- Table goes in the document BODY -->
+</head>
+
+<body>
+<table class="hovertable">
+  <tr>
+    <th> / </th>
+    <th>商品1</th>
+    <th>商品2</th>
+  </tr>
+  <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+    <td height="60">质量</td>
+    <td><label for="jiage1"></label>
+      <input name="z1" type="text" id="z1" value="">
+      <strong>g</strong></td>
+    <td><input name="z2" type="text" id="z2" value="">
+    <strong>g</strong></td>
+  </tr>
+  
+  
+  <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">	  
+    <td height="60">价格</td>
+    <td><label for="danwei1">
+      <input name="j1" type="text" id="j1" value="">
+    <strong>元</strong></label></td>
+    <td><input name="j2" type="text" id="j2" value="">
+      <strong>元</strong></td>
+  </tr>
+  <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+    <td height="60">单位价格</td>
+    <td><input name="d1" type="text" id="d1" value="" readonly="readonly">
+    <strong>元/g</strong></td>
+    <td><input name="d2" type="text" id="d2" value="" readonly="readonly">
+    <strong>元/g</strong></td>
+  </tr>
+  <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+    <td height="60">比较</td>
+    <td><input name="c1" type="submit" class="orange bigrounded" id="c1" value="计算单位价格" onClick="document.getElementById('d1').value=document.getElementById('j1').value/document.getElementById('z1').value"></td>
+    <td><input name="ca3" type="submit" class="orange bigrounded" id="ca3" value="计算单位价格"  onClick="document.getElementById('d2').value=document.getElementById('j2').value/document.getElementById('z2').value"></td>
+  </tr>
+</table>
+</body>
+
+<Script Language="javascript"> 
+function check(form)
+{
+	var str1 = form.z1.value;
+	var str2 = form.j1.value;
+	var str3 = str2/str1;
+	//echo str3;
+}
+
+function system_stop() 
+{ 
+document.form1.action="../../controls/system.php?status=stop"; 
+document.form1.submit(); 
+} 
+</Script>
